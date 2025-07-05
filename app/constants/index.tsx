@@ -10,16 +10,6 @@ import paegentQueenImg3 from  '../Assets/PaegentImages/queen_2023.jpg'
 export const HomeHeaderImg = HomeHeaderImage;
 export const originBgImg = originBgImage;
 export const heroImages = [HomeHeaderImage, originBgImage, HomeHeaderImage];
-export const feedFilterBtnList = ['Masquerade', 'Dance', 'Music', 'FaceOfIdoma']
 
 export const paegentQueenImgList = [paegentQueenImg1, paegentQueenImg2, paegentQueenImg3];
-
-export const feedList = [
-    {title: 'Alehcu Parade',desc: 'Maquerade March out', image: originBgImg , tags: ['Masquerade'] },
-    {title: 'Ogirinya Dance Performance',desc: 'Traditional Idoma dance showcasing cultural heritage', image: fillerImage2 , tags: ['dance', 'music'] },
-    {title: 'Ogirinya Dance Performance',desc: 'Traditional Idoma dance showcasing cultural heritage', image: fillerImage , tags: ['FaceOfIdoma'] },
-    {title: 'Ogira Flame Dance',desc: 'Burning Flame show down', image: HomeHeaderImage , tags: ['Dance'] },
-    {title: 'Ada Music Fest',desc: 'Traditional Idoma music festival of the year', image: originBgImg , tags: ['Masquerade', 'music'] },
-];
-
 

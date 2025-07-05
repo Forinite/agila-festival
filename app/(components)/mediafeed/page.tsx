@@ -1,8 +1,15 @@
-import {feedFilterBtnList, feedList} from "@/app/constants";
-import Feed from "@/app/components/ui/feed";
+import { feedFilterBtnList} from "@/app/constants/feedInfo";
+import FeedCard from "@/app/components/ui/feed";
 import SearchForm from "@/app/components/ui/SearchForm";
+import {Author, Feed} from "@/sanity/types";
+import {sanityFetch} from "@/sanity/lib/live";
+import {FEED_QUERY} from "@/sanity/lib/queries";
+// import {SanityLive} from "@/sanity/lib/live";
 
-const MediaFeed: React.FC = () => {
+export type FeedType = Omit<Feed, "author"> & {author?: Author }
+
+export default async function MediaFeed({feedList})
+{
     return (
         <section id="media" className="py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,9 +41,10 @@ const MediaFeed: React.FC = () => {
                 </div>
 
                 <div className="masonry-grid columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-                    {feedList.map((item, index) => (
-                        <div key={`${item.title}-${index}`} className="masonry-item break-insie-avoid group cursor-pointer mb-4">
-                            <Feed feedInfo={item} />
+                    {feedList.map((item: FeedType) => (
+                        <div key={`${item.title}`} className="masonry-item break-insie-avoid group cursor-pointer mb-4">
+
+                            <FeedCard feedInfo={item} />
                         </div>
                     ))}
                 </div>
@@ -49,8 +57,8 @@ const MediaFeed: React.FC = () => {
                     </div>
                 )}
             </div>
+            {/*<SanityLive />*/}
         </section>
     );
-};
+}
 
-export default MediaFeed;
