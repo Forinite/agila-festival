@@ -11,15 +11,20 @@ import {FEED_CHECK, FEED_QUERY} from "@/sanity/lib/queries";
 import {sanityFetch, SanityLive} from "@/sanity/lib/live";
 
 
-export default async function Home()
+export default async function Home({ searchParams}:{
+    searchParams: Promise<{query?: string}>
+
+})
 {
 
-    const { data: feedList }  = await sanityFetch({query: FEED_QUERY, tags: []})
+    const query = (await searchParams).query;
+    const params = {search: query || null}
+    const { data: feedList }  = await sanityFetch({query: FEED_QUERY, params})
 
     return (
         <>
             <HomePage />;
-            <MediaFeed feedList={feedList} />;
+            <MediaFeed feedList={feedList} query={query} />;
             <AboutPage />;
             <SchedulePage />
             <PaegentPage />

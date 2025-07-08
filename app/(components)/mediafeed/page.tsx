@@ -4,12 +4,18 @@ import SearchForm from "@/app/components/ui/SearchForm";
 import {Author, Feed} from "@/sanity/types";
 import {sanityFetch} from "@/sanity/lib/live";
 import {FEED_QUERY} from "@/sanity/lib/queries";
+import CategoryBtn from "@/app/components/ui/categoryBtn";
 // import {SanityLive} from "@/sanity/lib/live";
 
 export type FeedType = Omit<Feed, "author"> & {author?: Author }
 
-export default async function MediaFeed({feedList})
+export default async function MediaFeed({feedList, query}:{
+    feedList: any,
+    query: string
+
+})
 {
+
     return (
         <section id="media" className="py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,23 +28,17 @@ export default async function MediaFeed({feedList})
                     </p>
                 </div>
                 <div className={`flex flex-wrap justify-center gap-3 mb-8 px-32` } >
-                    <SearchForm />
+                    <SearchForm query={query} />
                 </div>
-                <div className="flex flex-wrap justify-center gap-3 mb-8">
-                    <button
-                        className={`px-4 py-2 rounded-full font-medium text-sm transition-colors bg-red-500 text-white  hover:text-gray-100 cursor-pointer hover:bg-red-600 border '}`}
-                    >
-                        All Moments
-                    </button>
-                    {feedFilterBtnList.map((item, index) => (
-                        <button
-                            key={item}
-                            className={`px-4 py-2 rounded-full font-medium cursor-pointer text-sm transition-colors bg-red-500' text-white'  'bg-white text-gray-700 hover:bg-gray-100 border`}
-                        >
-                            #{item}
-                        </button>
-                    ))}
-                </div>
+
+                    <CategoryBtn />
+
+
+                <section className="px-4 py-4">
+                    <p className=" font-medium text-base lg:text-lg">
+                        {query ?  `Search results for "${query}" `: "All Media" }
+                    </p>
+                </section>
 
                 <div className="masonry-grid columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
                     {feedList.map((item: FeedType) => (
@@ -57,7 +57,7 @@ export default async function MediaFeed({feedList})
                     </div>
                 )}
             </div>
-            {/*<SanityLive />*/}
+
         </section>
     );
 }

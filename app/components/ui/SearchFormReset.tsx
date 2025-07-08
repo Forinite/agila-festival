@@ -10,7 +10,7 @@ const reset = () => {
 const SearchFormReset = () => {
     return (
         <button type="reset" onClick={reset}>
-            <Link href="/" className=" relative -left-12 w-6 h-6 flex items-center justify-center mr-4 rounded-full float-end p-1 bg-red-500 text-white hover:bg-red-600 transition-colors cursor-pointer border" >
+            <Link href="/" className=" search-btn" >
                 <XIcon />
             </Link>
         </button>

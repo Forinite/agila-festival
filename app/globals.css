@@ -177,6 +177,9 @@
   .feed-filter-btn {
     @apply inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input hover:text-accent-foreground h-10 px-4 py-2 rounded-full font-medium text-sm transition-colors bg-white text-gray-700 hover:bg-gray-100 border;
   }
+  .search-btn {
+    @apply relative w-6 h-6 flex items-center justify-center mr-4 rounded-full float-end p-1 bg-red-500 text-white hover:bg-red-600 transition-colors cursor-pointer border
+  }
 }
 
 
