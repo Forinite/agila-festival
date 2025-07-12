@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee250df-a593-489a-bbad-52fbc9ad98c5" name="Changes" comment="Email feature functional, &#10;Still Mocking Data,&#10;About to create Specialized Feed Page." />
+    <list default="true" id="0ee250df-a593-489a-bbad-52fbc9ad98c5" name="Changes" comment="Email feature functional, &#10;Still Mocking Data,&#10;About to create Specialized Feed Page.">
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/adminContacts.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/constants/admincontacts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/(components)/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/contact/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/(components)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/(components)/involvement/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/involvement/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/(components)/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/(components)/paegent/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/paegent/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/(components)/schedule/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/schedule/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/components/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/components/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/components/PaegentApplicationSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/components/PaegentApplicationSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/components/ui/impactStat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/impactStat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/components/ui/involvementCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/involvementCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agila-festival-website/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/agila-festival-website/next.config.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,11 +30,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/agila-festival-website" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -40,24 +63,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/Frontend Developer/Desktop/Agila Festival/agila-festival-website/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\Frontend Developer\\Desktop\\Agila Festival\\agila-festival-website\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Frontend Developer/Desktop/Agila Festival/agila-festival-website/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Frontend Developer\\Desktop\\Agila Festival\\agila-festival-website\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\public" />
@@ -88,7 +111,8 @@
       <updated>1752179036529</updated>
       <workItem from="1752179037855" duration="6092000" />
       <workItem from="1752185483023" duration="3012000" />
-      <workItem from="1752249189829" duration="21892000" />
+      <workItem from="1752249189829" duration="24847000" />
+      <workItem from="1752330289270" duration="5365000" />
     </task>
     <task id="LOCAL-00001" summary="Email feature functional, &#10;Still Mocking Data,&#10;About to create Specialized Feed Page.">
       <option name="closed" value="true" />
@@ -106,11 +130,46 @@
       <option name="project" value="LOCAL" />
       <updated>1752298109498</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Email feature functional, &#10;Still Mocking Data,&#10;About to create Specialized Feed Page.">
+      <option name="closed" value="true" />
+      <created>1752298172068</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752298172068</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Email feature functional, &#10;Still Mocking Data,&#10;About to create Specialized Feed Page.">
+      <option name="closed" value="true" />
+      <created>1752298465571</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752298465571</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Email feature functional, &#10;Still Mocking Data,&#10;About to create Specialized Feed Page.">
+      <option name="closed" value="true" />
+      <created>1752298480418</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752298480418</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Email feature functional, &#10;Still Mocking Data,&#10;About to create Specialized Feed Page." />
