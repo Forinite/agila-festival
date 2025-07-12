@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ee250df-a593-489a-bbad-52fbc9ad98c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/about/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/contact/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/footer/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/home/Hero.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/home/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/involvement/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/mediafeed/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/navbar/navbar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/paegent/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/(components)/schedule/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/FeedImages/fillerImage9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/HeaderImages/HomeHeaderImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/HeaderImages/HomeHeaderImage2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/HeaderImages/originBgImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/PaegentImages/queen_2021.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/PaegentImages/queen_2022.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/Assets/PaegentImages/queen_2023.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/Hero.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/HomePage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/MediaFeed.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/PaegentApplicationSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/SearchForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/SearchFormReset.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/categoryBtn.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/contactForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/contactInfo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/feed.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/formSelect.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/heroInfo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/impactStat.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/involvementCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/mediaResources.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/queenCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/scheduleCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/components/ui/socialLinks.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/constants/feedInfo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/constants/footerConstants.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/constants/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/constants/pastQueens.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/constants/scheduleData.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/constants/textConstants.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/app/files/SCHEDULE.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agila-festival-website/public/SCHEDULE.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../fullstack-dev-portfolio/.idea/fullstack-devs-portfolio-site.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../futmx-etest/.idea/yc_directory.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yc_directory/.idea/yc_directory.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Forinite&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Forinite/agila-festival.git&quot;,
+    &quot;accountId&quot;: &quot;558528a0-7563-4de3-993f-4678696f6396&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2zhMpdT3Eo31uI8vRBoQPwXvk0q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/Frontend Developer/Desktop/Agila Festival/agila-festival-website/public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\Frontend Developer\\Desktop\\Agila Festival\\agila-festival-website\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\public" />
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\app\files" />
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\app\Assets\FeedImages" />
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\app\Assets\PaegentImages" />
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\app\Assets\HeaderImages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\app\components\ui" />
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\app\components\ui\formSelect" />
+      <recent name="C:\Users\Frontend Developer\Desktop\Agila Festival\agila-festival-website\app\Assets\FeedImages" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ee250df-a593-489a-bbad-52fbc9ad98c5" name="Changes" comment="" />
+      <created>1752179036529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752179036529</updated>
+      <workItem from="1752179037855" duration="6092000" />
+      <workItem from="1752185483023" duration="3012000" />
+      <workItem from="1752249189829" duration="21475000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
