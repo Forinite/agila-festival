@@ -32,7 +32,7 @@ function InfoCard({ title, description, delay }: InfoCardProps) {
 
 import { firstGridCards, secondGridCards } from "@/app/constants/aboutpage";
 
-export default function About() {
+const AboutPage = () => {
     return (
         <div className="pt-20 sm:pt-24 pb-16 sm:pb-20 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
@@ -64,4 +64,7 @@ export default function About() {
         </div>
     );
 }
+
+
+export default AboutPage
 
