@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface FeaturedPostProps {
     post: {
-        id: string; // Added for routing
+        id: number; // Added for routing
         title: string;
         badges: string[];
         date: string;

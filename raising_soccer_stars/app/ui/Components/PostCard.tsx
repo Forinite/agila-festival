@@ -9,7 +9,7 @@ import Link from "next/link";
 
 interface PostCardProps {
     post: {
-        id: string; // Added id for routing
+        id: number; // Added id for routing
         title: string;
         badges: string[];
         date: string;

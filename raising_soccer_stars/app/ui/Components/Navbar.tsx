@@ -20,24 +20,27 @@ export default function Navbar() {
     const navItems = [
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
-        { href: '/services', label: 'Services' },
-        { href: '/players', label: 'Players' },
+        { href: '/Services', label: 'Services' },
+        { href: '/Players', label: 'Players' },
         { href: '/contract', label: 'Contract' },
-        { href: '/bio', label: 'Bio' },
-        { href: '/blog', label: 'Blog' },
-        { href: '/contact', label: 'Contact Us' },
-        { href: '/get-started', label: 'Get Started' },
+        // { href: '/Bio', label: 'Bio' },
+        { href: '/Blog', label: 'Blog' },
+        { href: '/Contact', label: 'Contact Us' },
+        { href: '/GetStarted', label: 'Get Started' },
     ];
 
     return (
         <header className="w-full sticky top-0 z-50 bg-teal-500 dark:bg-teal-600 shadow-md">
             <div className="container mx-auto flex items-center justify-between px-4 md:px-6 h-20">
+
                 {/* Logo */}
-                <Link href="/" className="relative h-12 w-32 md:h-16 md:w-44 flex items-center">
+                <Link href="/" className="relative h-12 w-32 md:h-16 md:w-16 flex items-center">
                     <Image
-                        src="/ASTAlogo.jpg"
+                        // src="/ASTAlogo.jpg"
+                        src="/temp.png"
                         alt="Absolute Trust Soccer Agency Logo"
-                        fill
+                        width={48}
+                        height={48}
                         priority
                         className="object-contain"
                         onError={(e) => (e.currentTarget.src = '/placeholder-logo.png')}
@@ -45,33 +48,33 @@ export default function Navbar() {
                 </Link>
 
                 {/* Contact Info (Desktop) */}
-                <div className="hidden md:flex items-center gap-4 px-4 py-2 rounded-full border border-gray-200/30 bg-white/10 dark:bg-gray-800/10 shadow-sm">
-                    <a
-                        href="tel:+2349131148498"
-                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-gray-200 dark:hover:text-gray-300 focus:ring-2 focus:ring-teal-400 focus:outline-none transition"
-                    >
-                        <Phone size={14} />
-                        +234 913 114 8498
-                    </a>
-                    <a
-                        href="mailto:info@atsan.com.ng"
-                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-gray-200 dark:hover:text-gray-300 focus:ring-2 focus:ring-teal-400 focus:outline-none transition"
-                    >
-                        <Mail size={14} />
-                        info@atsan.com.ng
-                    </a>
-                </div>
+                {/*<div className="hidden md:flex items-center gap-4 px-4 py-2 rounded-full border border-gray-200/30 bg-white/10 dark:bg-gray-800/10 shadow-sm">*/}
+                {/*    <a*/}
+                {/*        href="tel:+2349131148498"*/}
+                {/*        className="flex items-center gap-2 text-sm font-medium text-white hover:text-gray-200 dark:hover:text-gray-300 focus:ring-2 focus:ring-teal-400 focus:outline-none transition"*/}
+                {/*    >*/}
+                {/*        <Phone size={14} />*/}
+                {/*        +234 913 114 8498*/}
+                {/*    </a>*/}
+                {/*    <a*/}
+                {/*        href="mailto:info@atsan.com.ng"*/}
+                {/*        className="flex items-center gap-2 text-sm font-medium text-white hover:text-gray-200 dark:hover:text-gray-300 focus:ring-2 focus:ring-teal-400 focus:outline-none transition"*/}
+                {/*    >*/}
+                {/*        <Mail size={14} />*/}
+                {/*        info@atsan.com.ng*/}
+                {/*    </a>*/}
+                {/*</div>*/}
 
                 {/* Desktop Navigation */}
                 <nav
-                    className="hidden md:flex gap-6 font-semibold text-base font-serif items-center"
+                    className="hidden md:flex gap-6 font-semibold lg:text-base md:text-sm font-serif items-center lg:pr-16 pr-8"
                     aria-label="Main navigation"
                 >
                     {navItems.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className={`relative text-white hover:text-gray-200 dark:hover:text-gray-300 transition-colors duration-200 group ${
+                            className={`relative text-white hover:text-gray-200 dark:hover:text-gray-300 transition-colors duration-200 group w-fit  ${
                                 pathname === item.href ? 'text-gray-200 dark:text-gray-300' : ''
                             }`}
                             aria-current={pathname === item.href ? 'page' : undefined}

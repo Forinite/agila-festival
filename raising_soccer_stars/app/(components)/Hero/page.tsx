@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Page() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -26,9 +28,9 @@ export default function Page() {
                     the heartbeat of soccer excellence.
                 </p>
 
-                <button className="inline-flex items-center justify-center gap-2 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#ef4444] text-white hover:bg-[rgba(249,38,38,1)] cursor-pointer rounded-md animate-in slide-in-from-bottom-12 hover:scale-105 transition-all duration-300 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                <Link href={'/GetStarted'} className="inline-flex items-center justify-center gap-2 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#ef4444] text-white hover:bg-[rgba(249,38,38,1)] cursor-pointer rounded-md animate-in slide-in-from-bottom-12 hover:scale-105 transition-all duration-300 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4">
                     Get Started Today
-                </button>
+                </Link>
             </div>
 
             {/* Scroll Indicator */}
