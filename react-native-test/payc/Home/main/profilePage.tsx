@@ -474,3 +474,4 @@ const styles = StyleSheet.create({
     footerIconContainer: { width: 20, height: 20, justifyContent: 'center', alignItems: 'center' },
     footerLabel: { color: '#94A3B8', fontSize: 10 },
 });
+
