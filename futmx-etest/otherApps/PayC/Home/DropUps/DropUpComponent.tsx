@@ -15,6 +15,7 @@ import PhoneBehindCardIllustration from "@/otherApps/PayC/Home/main/addMoney/Pho
 import SelectCurrencyDropUpContent from "@/otherApps/PayC/Home/main/currency/SelectCurrencyDropUpContent";
 import EnterAmountDropUpContent from "@/otherApps/PayC/Home/main/sendMoney/EnterAmountDropUpContent";
 import ConfirmPin_SendMoney from "@/otherApps/PayC/Home/main/sendMoney/ConfirmPin_SendMoney";
+import ConfirmationDropUpContext_Swap from "@/otherApps/PayC/Home/main/swap/confirmationDropUpContext_Swap";
 
 const DropUpComponent = () => {
 
@@ -25,14 +26,14 @@ const DropUpComponent = () => {
                     <div className={'w-12 h-1 bg-slate-400 mx-auto  '} />
 
                    {/*<SendMoneyDropUP />*/}
-                   {/*<LoadingDropUp_SendMoney />*/}
+                   <LoadingDropUp_SendMoney />
                    {/* <AddMoneyDropUp />*/}
 
                     {/*<BankTransferDropUpContent />*/}
                     {/*<BankTransferSuccessDropUpContent />*/}
                     {/*<PhoneBehindCardIllustration />*/}
 
-                    <SelectCurrencyDropUpContent />
+                    {/*<SelectCurrencyDropUpContent />*/}
 
                 </div>
 
@@ -46,10 +47,17 @@ const DropUpComponent = () => {
 
 
                 {/*</div>*/}
+                {/*<div className={' relative w-full h-fit min-h-[50px] bg-[#10182B]  rounded-t-4xl pt-6 px-6'}>*/}
 
 
+                {/*    /!*<ConfirmationDropUpContext_Swap />*!/*/}
+                {/*    */}
+
+                {/*</div>*/}
 
             </div>
+
+
         </div>
     )
 }

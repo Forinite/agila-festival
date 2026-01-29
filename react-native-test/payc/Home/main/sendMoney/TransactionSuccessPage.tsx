@@ -3,12 +3,20 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { ArrowLeft, Wallet2 } from 'lucide-react-native';
+import {router} from "expo-router";
 
-const TransactionSuccessPage = () => {
+
+
+const TransactionSuccessPage = ({amount} :{amount: string}) => {
+
+    const handleCheckWallet = () => {
+        router.replace('/profile')
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <TouchableOpacity style={styles.backButton}>
+                <TouchableOpacity onPress={() => router.replace('/profile')} style={styles.backButton}>
                     <ArrowLeft size={24} color="white" />
                 </TouchableOpacity>
 
@@ -17,12 +25,12 @@ const TransactionSuccessPage = () => {
 
                     <Text style={styles.message}>
                         You have successfully sent{' '}
-                        <Text style={styles.highlight}>NGN 5000</Text> to{' '}
+                        <Text style={styles.highlight}>NGN { amount }</Text> to{' '}
                         <Text style={styles.highlight}>John</Text>
                     </Text>
                 </View>
 
-                <TouchableOpacity style={styles.checkButton}>
+                <TouchableOpacity onPress={handleCheckWallet} style={styles.checkButton}>
                     <Text style={styles.checkText}>Check Wallet</Text>
                 </TouchableOpacity>
             </View>

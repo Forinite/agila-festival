@@ -2,20 +2,24 @@
 
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Wallet } from 'lucide-react-native';
+import { Wallet2 } from 'lucide-react-native';
+import {router} from "expo-router";
 
-const BankTransferSuccessDropUpContent = () => {
+const handleCHeckWallet = () => {
+    router.replace('/portfolio');
+}
+const BankTransferSuccessDropUpContent = ({amount} : { amount: string } ) => {
     return (
         <View>
             <View style={styles.successContainer}>
-                <Wallet size={144} color="#3B82F6" style={styles.successIcon} />
+                <Wallet2 size={144} color="#ffffff" style={styles.successIcon} />
 
                 <Text style={styles.successMessage}>
-                    You have successfully deposited NGN 5000
+                    You have successfully deposited NGN { amount || '5000'}
                 </Text>
             </View>
 
-            <TouchableOpacity style={styles.checkButton} activeOpacity={0.8}>
+            <TouchableOpacity onPress={handleCHeckWallet} style={styles.checkButton} activeOpacity={0.8}>
                 <Text style={styles.buttonText}>Check Wallet</Text>
             </TouchableOpacity>
         </View>

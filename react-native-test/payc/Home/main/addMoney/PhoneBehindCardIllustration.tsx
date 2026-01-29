@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import {cardBehindPhone} from "@/payc/contants/images";
+import {cardBehindPhone} from "@/payc/constants/images";
 
 const PhoneBehindCardIllustration = () => {
     return (

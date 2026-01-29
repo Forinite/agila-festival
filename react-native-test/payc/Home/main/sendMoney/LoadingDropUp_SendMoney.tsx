@@ -11,7 +11,7 @@ const LoadingDropUp_SendMoney = () => {
                     <View style={styles.spinnerBase} />
 
                     <View style={styles.spinnerDotsContainer}>
-                        {Array(8)
+                        {Array(7)
                             .fill('')
                             .map((_, index) => (
                                 <View
@@ -50,13 +50,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     spinnerContainer: {
-        height: 120,
+        height: 130,
         aspectRatio: 1,
         alignItems: 'center',
         justifyContent: 'center',
     },
     spinnerBase: {
-        height: '100%',
+        height: '85%',
         aspectRatio: 1,
         borderRadius: 999,
         backgroundColor: '#475569', // slate-700
@@ -70,10 +70,9 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 0,
         height: '100%',
-        width: 16,
+        width: 12,
         alignItems: 'center',
         justifyContent: 'flex-end',
-        // originY: 0, // origin-top equivalent
     },
     spinnerDot: {
         height: 32,

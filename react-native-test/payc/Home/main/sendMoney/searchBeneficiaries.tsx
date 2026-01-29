@@ -3,12 +3,18 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { ArrowLeft, Plus, Search } from 'lucide-react-native';
+import {router} from "expo-router";
 
 const SearchBeneficiaries = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <TouchableOpacity style={styles.backButton}>
+                <TouchableOpacity
+                    onPress={() => {
+                        router.push('/send');           // ← this line does the navigation
+                    }}
+                    style={styles.backButton}
+                >
                     <ArrowLeft size={24} color="white" />
                 </TouchableOpacity>
 

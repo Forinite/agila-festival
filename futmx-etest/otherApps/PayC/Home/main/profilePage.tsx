@@ -4,6 +4,7 @@ import React, {useState} from 'react'
 import {nairaGlobe, profileImg, quickMenuImages} from "@/otherApps/PayC/constants/images";
 import Image, {StaticImageData} from "next/image";
 import {
+    ArrowDown,
     Coins,
     DownloadIcon,
     EyeIcon, HelpingHand,
@@ -106,7 +107,7 @@ const ProfilePage = () => {
                         <p className={'font-semibold'}>HI, Jimmy</p>
                     </div>
 
-                    <div className={'absolute top-5 right-4 w-fit h-fit  rounded-md overflow-hidden'}>
+                    <div className={'absolute top-5 right-4 w-fit h-fit bg-[#182C53]  rounded-md overflow-hidden'}>
                         <div className={'w-fit h-fit flex items-center justify-between'}>
                             <div className={'w-full h-full flex items-center justify-between space-x-4 px-2 py-1'}>
                                 {quickMenuImages.map((item, index) => (
@@ -127,7 +128,9 @@ const ProfilePage = () => {
                         </div>
                         <div className={'flex items-center justify-center gap-2 mt-2'}>
                             <h2 className={'font-bold text-4xl'}>NGN {mockBalance.toFixed(0)}</h2>
-                            <div className={'w-5 aspect-square rounded-full border border-[#3B82F6]'}/>
+                            <div className={'w-5 aspect-square rounded-full border border-[#3B82F6] flex items-center justify-center gap-2'} >
+                                <ArrowDown className={'w-3 h-3 _payc-blue-text'} />
+                            </div>
                         </div>
 
                         <div className={'mt-4'}>

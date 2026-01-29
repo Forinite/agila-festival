@@ -10,12 +10,15 @@ import NearbyUserSearchScreen_Airdrop from "@/otherApps/PayC/Home/main/sendMoney
 import UserFound_Airdrop from "@/otherApps/PayC/Home/main/sendMoney/UserFound_Airdrop";
 import TransactionSuccessPage_Airdrop from "@/otherApps/PayC/Home/main/sendMoney/SuccessPage_Airdrop";
 import SelectCurrencyDropUpContent from "@/otherApps/PayC/Home/main/currency/SelectCurrencyDropUpContent";
+import RecieveCryptoPage from "@/otherApps/PayC/Home/main/addMoney/RecieveCryptoPage";
+import SwapPage from "@/otherApps/PayC/Home/main/swap/swapPage";
+import PortfolioPage from "@/otherApps/PayC/Home/main/portfolio/portfolioPage";
 
 const CurrentPage = () => {
     return (
         <main className={''}>
             {/*<DropUpComponent />*/}
-            <SendPage />
+            {/*<SendPage />*/}
             {/*<SearchBeneficiaries />*/}
             {/*<TransactionSuccessPage />*/}
 
@@ -26,6 +29,12 @@ const CurrentPage = () => {
             {/*<NearbyUserSearchScreen_Airdrop />*/}
             {/*<UserFound_Airdrop />*/}
             {/*<TransactionSuccessPage_Airdrop />*/}
+
+            {/*<RecieveCryptoPage />*/}
+
+            {/*<SwapPage />*/}
+
+            <PortfolioPage />
 
         </main>
 

@@ -12,9 +12,9 @@ const languages = [
     { lang: 'English', code: 'en-US' },
     { lang: 'Français', code: 'fr-FR' },
     { lang: 'Ghanaian', code: 'gh-GH' },
-    { lang: 'Kiswahili / English', code: 'ke-KE' },
-    { lang: 'Afrikaans / English', code: 'sa-ZA' },
-    { lang: 'English / French', code: 'cm-CM' },
+    { lang: 'Swahili', code: 'ke-KE' },
+    { lang: 'Afrikaans ', code: 'sa-ZA' },
+    { lang: 'Dutch', code: 'nl-NL' },
 ];
 
 const Screen2 = ({ onNext }: Screen2Props) => {

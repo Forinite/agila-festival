@@ -45,9 +45,9 @@ const DropUpComponent = () => {
                     <View style={styles.handleBar} />
 
                     {/* Active content — same as web: only one is rendered at a time */}
-                    {/* <SendMoneyDropUP />*/}
+                     <SendMoneyDropUP />
                     {/* <LoadingDropUp_SendMoney />*/}
-                     <AddMoneyDropUp />
+                    {/* <AddMoneyDropUp />*/}
 
                      {/*<BankTransferDropUpContent />*/}
                     {/* <BankTransferSuccessDropUpContent /> */}

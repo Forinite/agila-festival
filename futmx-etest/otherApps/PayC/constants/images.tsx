@@ -30,6 +30,8 @@ import KES from '../assets/currencies/KES.png'
 import USDC from '../assets/currencies/USDC.png'
 
 import SuiIcon from '../assets/tokens/SuiIcon.png'
+import SUI from '../assets/currencies/SUI.png'
+
 
 
 export const payCLogo = PayCLogo
@@ -65,3 +67,8 @@ export const currencies = [
 ]
 
 export const suiIcon = SuiIcon
+export const _nairaIcon = NGN
+
+export const nairaImage = NGN
+export const usdcImage = USDC
+export const suiImage = SUI

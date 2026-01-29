@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, SafeAreaView } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
-import {userFound_PhoneImage} from "@/payc/contants/images";
+import {userFound_PhoneImage} from "@/payc/constants/images";
 // import { userFound_PhoneImage } from '@/payc/constants/images';
 
 const UserFound_Airdrop = () => {

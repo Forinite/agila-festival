@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import {currencies} from "@/payc/contants/images";
+import {currencies} from "@/payc/constants/images";
 // import { currencies } from '@/payc/constants/images';
 
 const SelectCurrencyDropUpContent = () => {

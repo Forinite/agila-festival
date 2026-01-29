@@ -4,14 +4,19 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { ArrowLeft, Wallet2 } from 'lucide-react-native';
 
-const TransactionSuccessPage = () => {
+interface Props {
+    onClose?: () => void;
+}
+
+const TransactionSuccessPage = ({ onClose }: Props) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <TouchableOpacity style={styles.backButton}>
-                    <ArrowLeft size={24} color="white" />
-                </TouchableOpacity>
-
+                {onClose && (
+                    <TouchableOpacity onPress={onClose} style={{ alignSelf: 'flex-start', padding: 16 }}>
+                        <ArrowLeft size={24} color="white" />
+                    </TouchableOpacity>
+                )}
                 <View style={styles.successBody}>
                     <Wallet2 size={180} color="#ffffff" style={styles.walletIcon} />
 

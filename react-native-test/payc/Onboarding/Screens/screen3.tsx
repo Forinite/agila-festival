@@ -11,7 +11,7 @@ import {
     Animated,
     PanResponder,
 } from 'react-native';
-import {blankBox,  payCards, payGlobe} from "@/payc/contants/images";
+import {blankBox,  payCards, payGlobe} from "@/payc/constants/images";
 
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');

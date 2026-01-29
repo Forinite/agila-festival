@@ -1,12 +1,14 @@
 // payc/Home/focus/currentPage.tsx
 
 import React, { useState } from 'react';
-import {SafeAreaView, View, StyleSheet, Dimensions, TouchableWithoutFeedback, TouchableOpacity} from 'react-native';
+import { SafeAreaView, View, StyleSheet, Dimensions, TouchableWithoutFeedback, TouchableOpacity, Text } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
 
 // ──────────────────────────────────────────────
-// All possible drop-up contents (import what you need)
+// All possible drop-up contents
 // ──────────────────────────────────────────────
+
+
 import AddMoneyDropUp from '@/payc/Home/main/addMoney/addMoneyDropUp';
 import SendMoneyDropUP from '@/payc/Home/main/sendMoney/sendMoneyDropUP';
 import LoadingDropUp_SendMoney from '@/payc/Home/main/sendMoney/LoadingDropUp_SendMoney';
@@ -16,17 +18,31 @@ import PhoneBehindCardIllustration from '@/payc/Home/main/addMoney/PhoneBehindCa
 import SelectCurrencyDropUpContent from '@/payc/Home/main/currency/SelectCurrencyDropUpContent';
 import EnterAmountDropUpContent from '@/payc/Home/main/sendMoney/EnterAmountDropUpContent';
 import ConfirmPin_SendMoney from '@/payc/Home/main/sendMoney/ConfirmPin_SendMoney';
+import ConfirmationDropUpContext_Swap from "@/payc/Home/main/swap/confirmationDropUpContext_Swap";
+
+// import ConfirmationDropUpContext_Swap from '@/payc/Home/main/swap/ConfirmationDropUpContext_Swap';
 
 // ──────────────────────────────────────────────
-// Your main screens
+// Main screens (uncomment one at a time for testing)
 // ──────────────────────────────────────────────
 import ProfilePage from '@/payc/Home/main/profilePage';
-import MainPage from '@/payc/Home/mainPage';
-// import other screens as needed...
+import SwapPage from '@/payc/Home/main/swap/swapPage';
+import PortfolioPage from "@/payc/Home/main/portfolio/portfolioPage";
+
+// import SendPage from '@/payc/Home/main/sendMoney/SendPage';
+import AirdropIntroPage from '@/payc/Home/main/sendMoney/AirdropIntroPage';
+import SendPage from "@/payc/Home/main/sendMoney/sendPage";
+import {router} from "expo-router";
+import TransactionSuccessPage from "@/payc/Home/main/sendMoney/TransactionSuccessPage";
+
+
+// import MainPage from '@/payc/Home/mainPage';
+// import other screens...
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
-type DropUpVariant = 'handle' | 'back-arrow';
+type DropUpVariant = 'handle' | 'back-arrow' | 'plain'; // ← added 'plain' for swap confirmation
+type DropUpDynamicValue = string; // ← added 'plain' for swap confirmation
 type DropUpContentType =
     | 'add-money'
     | 'send-money'
@@ -37,47 +53,111 @@ type DropUpContentType =
     | 'select-currency'
     | 'enter-amount'
     | 'confirm-pin'
+    | 'swap-confirmation'
     | null;
 
-const CurrentPage = () => {
-    // ──────────────────────────────────────────────
-    // Drop-up local state (simple & visible immediately)
-    // ──────────────────────────────────────────────
+
+
+
+
+interface CurrentPageProps {
+    page?: string; // e.g. 'profile', 'swap', 'send', 'portfolio', etc.
+}
+
+const CurrentPage = ({ page = 'profile' }: CurrentPageProps) => {
+    // Drop-up state
     const [showDropUp, setShowDropUp] = useState(false);
     const [dropUpContent, setDropUpContent] = useState<DropUpContentType>(null);
     const [dropUpVariant, setDropUpVariant] = useState<DropUpVariant>('handle');
+    const [dropUpDynamicValue, setDropUpDynamicValue] = useState<DropUpDynamicValue>('');
 
-    // Helper to open drop-up with content + variant
-    const openDropUp = (type: DropUpContentType, variant: DropUpVariant = 'handle') => {
+    // Helper to open drop-up
+    const openDropUp = (type: DropUpContentType, variant: DropUpVariant = 'handle', dynamicValue?: DropUpDynamicValue ) => {
         console.log(`Opening drop-up: ${type} (${variant})`);
         setDropUpContent(type);
         setDropUpVariant(variant);
+        dynamicValue && setDropUpDynamicValue(dynamicValue);
         setShowDropUp(true);
     };
 
     const closeDropUp = () => {
         console.log('Closing drop-up');
         setShowDropUp(false);
-        // Optional: clear content after animation
         setTimeout(() => setDropUpContent(null), 300);
     };
 
-    // ──────────────────────────────────────────────
-    // Render the active main screen (uncomment one)
-    // ──────────────────────────────────────────────
-    const renderMainContent = () => {
-        // For testing — show ProfilePage + pass openDropUp to it
-        return <ProfilePage openDropUp={openDropUp} />;
+    // Render main content (pass openDropUp to screens that need it)
 
-        // Alternatives (uncomment one at a time):
-        // return <MainPage />;
-        // return <SendPage />;
-        // etc.
+    const renderMainContent = () => {
+        switch (page) {
+            case 'profile':
+                return <ProfilePage openDropUp={openDropUp} />;
+            case 'swap':
+                return <SwapPage openDropUp={openDropUp} startSwapFlow={startSwapFlow} />;
+            case 'send':
+                return (
+                    <SendPage
+                        onSendPress={() => openDropUp('enter-amount', 'back-arrow')}
+                    />
+                );
+            case 'portfolio':
+                return <PortfolioPage />;
+
+            case 'transaction-success':
+                return <TransactionSuccessPage amount={dropUpDynamicValue} />;
+            // Add more cases as needed
+            default:
+                return <ProfilePage openDropUp={openDropUp} />;
+        }
     };
 
-    // ──────────────────────────────────────────────
-    // Render the selected drop-up content
-    // ──────────────────────────────────────────────
+    // New: mock swap flow with transitions
+    const startSwapFlow = () => {
+        console.log('Starting mock swap flow');
+
+        // Step 1: Show confirmation
+        openDropUp('swap-confirmation', 'plain');
+
+        // Step 2: After user "confirms" (simulated by delay or button press inside confirmation)
+        // For now we simulate confirmation with a 1.5s delay
+        setTimeout(() => {
+            openDropUp('loading-send-money', 'handle');
+
+            // Step 3: After loading (mock 2s delay), go to success
+            setTimeout(() => {
+                openDropUp('bank-transfer-success', 'plain'); // new type
+            }, 2000);
+        }, 1500); // short delay to mimic "user thinking"
+    };
+
+
+    // New: function to simulate confirmation → loading → success
+    const handleConfirmSwap = () => {
+        console.log('User confirmed swap → starting loading');
+
+        // Show loading immediately
+        openDropUp('loading-send-money', 'handle');
+
+        // After 2 seconds (mock processing), show success
+        setTimeout(() => {
+            console.log('Mock processing done → showing success');
+            openDropUp('bank-transfer-success', 'plain', dropUpDynamicValue);
+        }, 2000);
+    };
+
+    const handleConfirmPinFlow = (pin:string)=> {
+        // Show loading immediately
+        openDropUp('loading-send-money', 'handle');
+
+        // After 2 seconds (mock processing), show success
+        setTimeout(() => {
+            console.log('Mock processing done → showing success');
+            openDropUp(null, undefined);
+            router.replace(`/(sendPages)/${dropUpDynamicValue}/transactionSuccessRoute`)
+        }, 2000);
+    }
+
+    // Render selected drop-up content
     const renderDropUpContent = () => {
         if (!dropUpContent) return null;
 
@@ -91,15 +171,28 @@ const CurrentPage = () => {
             case 'bank-transfer':
                 return <BankTransferDropUpContent />;
             case 'bank-transfer-success':
-                return <BankTransferSuccessDropUpContent />;
+                return <BankTransferSuccessDropUpContent amount = {dropUpDynamicValue} />;
             case 'phone-card-illustration':
                 return <PhoneBehindCardIllustration />;
             case 'select-currency':
                 return <SelectCurrencyDropUpContent />;
             case 'enter-amount':
-                return <EnterAmountDropUpContent />;
+                return (
+                    <EnterAmountDropUpContent
+                        onSendConfirm={(amount) => {
+                            setDropUpDynamicValue(amount)
+                            openDropUp('confirm-pin', 'back-arrow');
+                        }}
+                    />
+                );
             case 'confirm-pin':
-                return <ConfirmPin_SendMoney />;
+                return <ConfirmPin_SendMoney
+                        onConfirmPin={(pin) => {
+                            handleConfirmPinFlow(pin);
+                    }}
+                />;
+            case 'swap-confirmation':
+                return <ConfirmationDropUpContext_Swap onConfirm={handleConfirmSwap} />;
             default:
                 return (
                     <Text style={{ color: 'white', fontSize: 18, textAlign: 'center', padding: 40 }}>
@@ -112,32 +205,33 @@ const CurrentPage = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.innerContent}>
-                {/* Main screen content */}
+                {/* Main screen */}
                 {renderMainContent()}
 
-                {/* Drop-up overlay – only when showDropUp is true */}
+                {/* Drop-up overlay */}
                 {showDropUp && dropUpContent && (
                     <View style={styles.overlay}>
-                        {/* Backdrop – tap to close */}
                         <TouchableWithoutFeedback onPress={closeDropUp}>
                             <View style={styles.backdrop} />
                         </TouchableWithoutFeedback>
 
-                        {/* Bottom sheet */}
                         <View style={styles.sheetContainer}>
                             <View style={styles.sheet}>
-                                {/* Header variant */}
+                                {/* Header based on variant */}
                                 {dropUpVariant === 'handle' ? (
                                     <View style={styles.handleBar} />
-                                ) : (
+                                ) : dropUpVariant === 'back-arrow' ? (
                                     <View style={styles.headerWithBack}>
                                         <TouchableOpacity onPress={closeDropUp} style={styles.backIcon}>
                                             <ArrowLeft size={28} color="white" />
                                         </TouchableOpacity>
                                     </View>
+                                ) : (
+                                    // 'plain' variant — no header at all (for swap confirmation)
+                                    <View style={{ height: 16 }} /> // just top padding
                                 )}
 
-                                {/* Actual content */}
+                                {/* Content */}
                                 <View style={styles.contentPadding}>{renderDropUpContent()}</View>
                             </View>
                         </View>

@@ -4,10 +4,50 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 // import { eyeOnShield } from '@/payc/constants/images';
 import { Scan, ArrowLeft } from 'lucide-react-native';
-import {eyeOnShield} from "@/payc/contants/images";
+import {eyeOnShield} from "@/payc/constants/images";
 
-const ConfirmPin_SendMoney = () => {
-    const [pinInput] = useState<(number | null)[]>([null, null, null, null]);
+interface ConfirmPinProps {
+    onConfirmPin: (arg: string) => void;
+}
+
+
+const ConfirmPin_SendMoney = ({ onConfirmPin }: ConfirmPinProps ) => {
+    const [pinInput, setPinInput] = useState<(string | null)[]>([null, null, null, null]);
+    const [currentNumber, setCurrentNumber] = useState(0);
+
+
+    const handleSubmit = () => {
+        onConfirmPin(pinInput.join(''))
+    }
+    const checkPinCount = () =>{
+        if (currentNumber > 3){
+            handleSubmit()
+        }
+    }
+    checkPinCount()
+
+
+    const handleKeyPress = (key: string) => {
+        if (key === 'back') {
+            setPinInput(pinInput.with(currentNumber - 1, null)) ;
+            // pinInputVar[currentNumber - 1] = null;
+            // setPinInput(pinInputVar);
+            setCurrentNumber(Math.max(currentNumber - 1, 0));
+
+        } else {
+
+
+            setPinInput(pinInput.with(currentNumber, key)) ;
+            setCurrentNumber(Math.min(currentNumber + 1, 4));
+            if (currentNumber > 3){
+                checkPinCount()
+                return
+            }
+        }
+    };
+
+
+
 
     // Note: This is static for now — in real app you'd use onPress handlers + state update
 
@@ -33,7 +73,7 @@ const ConfirmPin_SendMoney = () => {
             <View style={styles.keypadContainer}>
                 <View style={styles.keypadRow}>
                     {[1, 2, 3].map((num) => (
-                        <TouchableOpacity key={num} style={styles.keyButton} activeOpacity={0.7}>
+                        <TouchableOpacity key={num}  onPress={() => handleKeyPress(num.toString())} style={styles.keyButton} activeOpacity={0.7}>
                             <Text style={styles.keyText}>{num}</Text>
                         </TouchableOpacity>
                     ))}
@@ -41,7 +81,7 @@ const ConfirmPin_SendMoney = () => {
 
                 <View style={styles.keypadRow}>
                     {[4, 5, 6].map((num) => (
-                        <TouchableOpacity key={num} style={styles.keyButton} activeOpacity={0.7}>
+                        <TouchableOpacity key={num}  onPress={() => handleKeyPress(num.toString())}  style={styles.keyButton} activeOpacity={0.7}>
                             <Text style={styles.keyText}>{num}</Text>
                         </TouchableOpacity>
                     ))}
@@ -49,7 +89,7 @@ const ConfirmPin_SendMoney = () => {
 
                 <View style={styles.keypadRow}>
                     {[7, 8, 9].map((num) => (
-                        <TouchableOpacity key={num} style={styles.keyButton} activeOpacity={0.7}>
+                        <TouchableOpacity  key={num} onPress={() => handleKeyPress(num.toString())} style={styles.keyButton} activeOpacity={0.7}>
                             <Text style={styles.keyText}>{num}</Text>
                         </TouchableOpacity>
                     ))}
@@ -60,11 +100,11 @@ const ConfirmPin_SendMoney = () => {
                         <Scan size={28} color="white" />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.keyButton} activeOpacity={0.7}>
+                    <TouchableOpacity  onPress={() => handleKeyPress('0')} style={styles.keyButton} activeOpacity={0.7}>
                         <Text style={styles.keyText}>0</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.keyButton} activeOpacity={0.7}>
+                    <TouchableOpacity onPress={() => handleKeyPress('back')} style={styles.keyButton} activeOpacity={0.7}>
                         <ArrowLeft size={28} color="white" />
                     </TouchableOpacity>
                 </View>

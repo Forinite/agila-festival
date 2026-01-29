@@ -11,11 +11,18 @@ import {
     Platform,
 } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
+import {router} from "expo-router";
 
-const SendPage = () => {
+
+interface SendPageProps {
+    onSendPress: () => void;  // Called when user taps "Send Money"
+}
+
+const SendPage = ({ onSendPress }: SendPageProps) => {
     const [paycTag, setPaycTag] = useState('');
     const [description, setDescription] = useState('');
     const [saveToBeneficiaries, setSaveToBeneficiaries] = useState(false);
+
 
     return (
         <SafeAreaView style={styles.container}>
@@ -63,7 +70,8 @@ const SendPage = () => {
                             <TouchableOpacity
                                 style={styles.checkboxRow}
                                 activeOpacity={0.7}
-                                onPress={() => setSaveToBeneficiaries(!saveToBeneficiaries)}
+                                // onPress={() => setSaveToBeneficiaries(!saveToBeneficiaries)}
+                                onPress={() => router.push('/(sendPages)/[amount]/page')}
                             >
                                 <View
                                     style={[
@@ -76,7 +84,12 @@ const SendPage = () => {
                                 <Text style={styles.checkboxLabel}>Send to beneficiaries</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity activeOpacity={0.7}>
+                            <TouchableOpacity
+                                activeOpacity={0.7}
+                                onPress={() => {
+                                    router.push('/beneficiaries');           // ← this line does the navigation
+                                }}
+                            >
                                 <Text style={styles.viewLink}>View beneficiaries</Text>
                             </TouchableOpacity>
                         </View>
@@ -85,7 +98,11 @@ const SendPage = () => {
 
                 {/* Fixed bottom button */}
                 <View style={styles.bottomButtonContainer}>
-                    <TouchableOpacity style={styles.sendButton} activeOpacity={0.85}>
+                    <TouchableOpacity
+                        style={styles.sendButton}
+                        activeOpacity={0.85}
+                        onPress={onSendPress}  // ← parent handles drop-up
+                    >
                         <Text style={styles.sendButtonText}>Send Money</Text>
                     </TouchableOpacity>
                 </View>

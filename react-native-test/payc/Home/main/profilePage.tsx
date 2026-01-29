@@ -13,7 +13,7 @@ import {
     Dimensions,
 } from 'react-native';
 
-import { nairaGlobe, profileImg, quickMenuImages } from  '@/payc/contants/images';
+import { nairaGlobe, profileImg, quickMenuImages } from '@/payc/constants/images';
 
 
 // Use lucide-react-native instead of lucide-react
@@ -26,7 +26,7 @@ import {
     HandCoins,
     Plus,
     Send,
-    Wallet,
+    Wallet, ArrowDown,
 } from 'lucide-react-native';
 import {useDropUp} from "@/payc/contexts/DropUpContexts";
 
@@ -123,21 +123,26 @@ export default function ProfilePage({ openDropUp }: ProfilePageProps) {
     const mainNavs: MainNavItem[] = [
         {
             label: 'Add Money',
-            icon: <Plus size={32} color="#3B82F6" />,
+            icon: <Plus size={20} color="#3B82F6" />,
             onPress: () => openDropUp('add-money', 'handle'),
 
         },
         {
             label: 'Withdraw',
-            icon: <HandCoins size={32} color="#3B82F6" />,
+            icon: <HandCoins size={20} color="#3B82F6" />,
             // onPress: () => openDropUp('withdraw', 'handle'), // add later
         },
         {
             label: 'Receive',
-            icon: <Download size={32} color="#3B82F6" />,
+            icon: <Download size={20} color="#3B82F6" />,
             // onPress: () => openDropUp('receive', 'handle'), // add later
         },
     ];
+
+
+    const handleAirdropBtnClick = () => {
+      openDropUp('send-money', 'handle')
+    }
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.mainContentWrapper}>
@@ -177,7 +182,9 @@ export default function ProfilePage({ openDropUp }: ProfilePageProps) {
 
                         <View style={styles.balanceValueRow}>
                             <Text style={styles.balanceText}>NGN {mockBalance.toFixed(0)}</Text>
-                            <View style={styles.balanceDot} />
+                            <View style={styles.balanceDot} >
+                                <ArrowDown size={10} color="#3B82F6" />
+                            </View>
                         </View>
 
                         <View style={styles.mainNavContainer}>
@@ -282,7 +289,7 @@ export default function ProfilePage({ openDropUp }: ProfilePageProps) {
                     {/* Airdrop button */}
                     <View style={styles.airdropSection}>
                         <TouchableOpacity style={styles.airdropBtn}>
-                            <Text style={styles.airdropText}>Airdrop a friend</Text>
+                            <Text onPress={handleAirdropBtnClick} style={styles.airdropText}>Airdrop a friend</Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
@@ -325,7 +332,7 @@ export default function ProfilePage({ openDropUp }: ProfilePageProps) {
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#0F172A' },
     mainContentWrapper: { flex: 1 },
-    scrollContent: { paddingBottom: 120 },
+    scrollContent: { paddingBottom: 0 },
 
     headerRelative: { position: 'relative', paddingTop: 16 },
     profileRow: { flexDirection: 'row', alignItems: 'center', paddingLeft: 16, gap: 8 },
@@ -363,22 +370,26 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 2,
         borderColor: '#3B82F6',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
     mainNavContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '65%',
-        marginTop: 24,
+        marginTop: 12,
     },
     mainNavItem: { alignItems: 'center', gap: 8 },
     mainNavIconBg: {
-        width: 56,
-        height: 56,
+        width: 40,
+        height: 40,
         borderRadius: 999,
         backgroundColor: '#182C53',
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 4,
     },
     mainNavLabel: { color: '#D1D5DB', fontSize: 10 },
 

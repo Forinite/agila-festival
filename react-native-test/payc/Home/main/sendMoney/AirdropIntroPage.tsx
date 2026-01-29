@@ -11,7 +11,7 @@ import {
     ScrollView,
 } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
-import {handHoldingPhone} from "@/payc/contants/images";
+import {handHoldingPhone} from "@/payc/constants/images";
 
 
 const AirdropIntroPage = () => {

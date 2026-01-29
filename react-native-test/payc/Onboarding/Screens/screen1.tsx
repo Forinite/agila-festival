@@ -10,7 +10,7 @@ import {
     Animated,
     Easing,
 } from 'react-native';
-import {payCLogo} from "@/payc/contants/images";
+import {payCLogo} from "@/payc/constants/images";
 
 interface Screen1Props {
     onNext: () => void;

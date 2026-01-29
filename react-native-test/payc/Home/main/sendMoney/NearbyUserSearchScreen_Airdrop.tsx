@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView } from 'react-native';
 import { ArrowLeft } from 'lucide-react-native';
-import {nearbyDeviceSearchImage} from "@/payc/contants/images";
+import {nearbyDeviceSearchImage} from "@/payc/constants/images";
 // import { nearbyDeviceSearchImage } from '@/payc/constants/images';
 
 
