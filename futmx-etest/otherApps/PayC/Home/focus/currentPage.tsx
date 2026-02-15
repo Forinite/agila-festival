@@ -30,11 +30,11 @@ const CurrentPage = () => {
             {/*<UserFound_Airdrop />*/}
             {/*<TransactionSuccessPage_Airdrop />*/}
 
-            {/*<RecieveCryptoPage />*/}
+            <RecieveCryptoPage />
 
             {/*<SwapPage />*/}
 
-            <PortfolioPage />
+            {/*<PortfolioPage />*/}
 
         </main>
 

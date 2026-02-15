@@ -30,7 +30,7 @@ const RecieveCryptoPage = () => {
                         </div>
 
                         <h4 className={'mt-6 text-sm font-bold'}>Network</h4>
-                        Network'} className={'w-full h-full'} />
+
                     </div>
 
                     <div className={'mt-6'}>
@@ -48,12 +48,11 @@ const RecieveCryptoPage = () => {
                             </div>
                         </div>
                         <div className={'mt-2 h-fit w-full bg-[#182C53] py-3 rounded-lg  px-2 text-xs'}>
-                            <input type={'text'} placeholder={'Select
+                            <input type={'text'} placeholder={'Select Network'} className={'w-full h-full'} />
 
                             <div className={'flex items-center justify-center mt-4'}>
-                                <div className={'w-[160px] aspect-square border'}>
+                                <div className={'w-[160px] aspect-square border'} />
 
-                                </div>
 
                             </div>
 
@@ -81,6 +80,7 @@ const RecieveCryptoPage = () => {
             </div>
 
         </main>
+
     )
 }
 export default RecieveCryptoPage
